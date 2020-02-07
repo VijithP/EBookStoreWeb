@@ -1,0 +1,13 @@
+.clsImgLogin
+{
+    height: 220px;
+    width:220px;
+    border: 2px solid #c1c1c1;
+}
+.LoginDiv
+{
+    background-color: #ffffff;
+    padding: 20px;
+    margin-top: 120px;
+    box-shadow: 0 8px 6px -6px #717171;
+}

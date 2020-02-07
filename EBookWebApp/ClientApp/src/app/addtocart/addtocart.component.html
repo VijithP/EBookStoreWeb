@@ -1,0 +1,74 @@
+<app-navmenu></app-navmenu>
+<br/>
+
+<br/>
+<div class="row">
+    <div class="offset-md-1 col-md-11">
+        <div class="card w-50"   *ngFor="let addToCartBook of bookAddToCardList" >
+            <div class="card-body">
+                <h5 class="card-title">{{addToCartBook.BookName}}</h5>
+                <p class="card-text">{{addToCartBook.BookDescription}}</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Price</label>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">₹</div>
+                              </div>
+                              <input [value]="addToCartBook.Price" type="text" class="form-control" id="inlineFormInputGroup" placeholder="Price " readonly>
+                            </div>
+                          </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#" class="btn btn-primary btn-sm">Remove</a>
+                    </div>
+
+                </div>        
+                           
+            </div>
+        </div>
+        <br>       
+
+        <div *ngIf="sumOfItemInAddToCard>0" class="card w-50">
+            <h5 class="card-header">Price Details</h5>
+            <div class="card-body">
+                <h5 class="card-text">Price ({{sumOfItemInAddToCard}} items )  - {{totalPrice}} INR</h5>
+                <p class="card-title">Total Amount - {{totalPrice}} INR</p>        
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="col-auto">
+                            <label class="sr-only" for="inlineFormInputGroup">Price</label>
+                            <div class="input-group mb-2">
+                              <div class="input-group-prepend">
+                                <div class="input-group-text">(C)</div>
+                              </div>
+                              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Contact Number " >
+                            </div>
+                          </div>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary btn-sm" (click)="SaveBookPurchaseDetails()" >Place Order</button>
+                    </div>
+                </div>         
+                          
+
+            </div>
+        </div>
+
+        <div *ngIf="sumOfItemInAddToCard==0">
+            No Book Details Available in Add To Card
+        </div>
+        
+        <br>
+
+      
+    </div>
+
+    
+
+
+</div>
+
+

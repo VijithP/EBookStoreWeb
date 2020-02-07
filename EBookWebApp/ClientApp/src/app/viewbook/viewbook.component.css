@@ -1,0 +1,45 @@
+.card-deck .card
+{
+    font-size: 11px;
+}
+
+.card-deck .card-body{
+    padding: .5em;
+}
+
+.card-img-top
+{
+    height: 100px;
+    width: 100px;
+    margin: 10px auto;
+}
+
+.clsPriceDetails
+{
+    font-size: 13px;
+}
+
+.card-body .viewButton{
+    margin: 0px 10px;
+}
+
+.clsDivEachCard
+{
+    margin-bottom: 10px !important;
+}
+
+.divBookImg
+{
+    display: inline;
+}
+.divBookName
+{
+    display: inline;
+}
+
+.clsBookHeading
+{
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    padding: 5px;;
+}

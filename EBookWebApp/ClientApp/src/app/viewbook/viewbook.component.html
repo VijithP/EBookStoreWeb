@@ -1,0 +1,181 @@
+<app-navmenu></app-navmenu>
+
+<!-- <div class="col-md-12">
+<mat-tab-group>
+    <mat-tab label="First"> 
+        <div class="card-columns">
+        <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title that</h5>
+            </div>
+        </div>
+    </div> 
+    <div class="card-columns">
+        <div class="card">
+            <img class="card-img-top" src="..." alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Card title that</h5>
+            </div>
+        </div>
+    </div>
+
+</mat-tab>
+    <mat-tab label="Second"> Content 2 </mat-tab>
+    <mat-tab label="Third"> Content 3 </mat-tab>
+  </mat-tab-group>
+</div> -->
+
+<br>
+
+<div class="row">
+    <div class="col-md-4">
+
+        <div class="card">
+            <div class="card-header">
+                Just Arrived
+            </div>
+            <div class="card-body" >
+
+                <div class="card-deck" >
+                    <div class="card border-primary" *ngFor="let justArrivedBook of bookRecentlyList">
+                        <div class="card-body">
+                            <div class="divBookImg">
+                                <i class="fa fa-book fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="divBookName">
+                                {{justArrivedBook.BookName}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card">
+            <div class="card-header">
+                Best Seller
+            </div>
+            <div class="card-body">
+
+                <div class="card-deck" >
+
+                    <div class="card border-info" *ngFor="let mostSellerBook of bookMostSellerList">
+                        <div class="card-body">
+                            <div class="divBookImg">
+                                <i class="fa fa-book fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="divBookName">
+                                {{mostSellerBook.BookName}}
+                            </div>
+                        </div>
+                    </div>                
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+
+        <div class="card">
+            <div class="card-header">
+                Search Book
+            </div>
+            <div class="card-body">
+
+                <div class="card-deck" >
+
+                    <div class="card border-info" >
+                        <div class="card-body">
+                            <form class="form-inline my-2 my-lg-0">
+                                <input class="form-control mr-sm-2" 
+                                type="search"
+                                name="searchText"
+                                [(ngModel)]="searchText"                               
+                                #SearchTextBox="ngModel"
+                                placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                                    (click)="SearchBookList()">Search</button>
+                            </form>
+                        </div>
+                    </div>                
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<br>
+
+
+<div class="card-deck">
+    <div *ngFor="let bookDetails of bookListBind">
+
+        <div class="card clsDivEachCard" style="width: 14rem;">
+            <img class="card-img-top" src="../../assets/img/book.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">{{bookDetails.BookName}}</h5>
+                <p class="card-text"> by <b>{{bookDetails.Author}}</b></p>
+                <p class="card-text">{{bookDetails.BookDescription}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item clsPriceDetails">Price : <b>{{bookDetails.Price}} INR</b></li>
+
+            </ul>
+            <div class="card-body">
+                <button type="button" class="btn btn-outline-primary btn-sm viewButton"
+                    (click)="SaveBookPurchaseDetails(bookDetails.BookID,1)">
+                    Add To Cart
+                </button>
+                <button type="button" class="btn btn-outline-success btn-sm viewButton"
+                (click)="PurchaseBookDetails(bookDetails.BookID,1)"
+                >
+                    Buy
+                </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- 
+<div class="card-deck">
+    <div *ngFor="let number of [0,1,2,3,4,5,6,7,8,9]">
+      
+        <div class="card" style="width: 14rem;">
+            <img class="card-img-top" src="../../assets/img/book.png" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">The Alchemist</h5>
+                <p class="card-text">The Alchemist follows the journey of an Andalusian shepherd boy named Santiago.
+                    Believing a recurring dream to be prophetic, he asks a Gypsy fortune teller in the nearby town
+                    about its meaning.</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Price : <b>1000 INR</b></li>
+
+            </ul>
+            <div class="card-body">
+                <button type="button" class="btn btn-outline-primary btn-sm">
+                    <a href="#">Add To Cart</a>
+                </button>
+                <button type="button" class="btn btn-outline-success btn-sm">
+                    <a href="#">Buy</a>
+                </button>
+            </div>
+        </div>
+     
+    </div>
+</div> -->
